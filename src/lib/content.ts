@@ -1,0 +1,11 @@
+import { cache } from 'react';
+import { db,databaseConfigured } from './db';
+import type { Kind } from '@prisma/client';
+export const facebook='https://www.facebook.com/paraisodejunequixote.111';
+export const getSettings=cache(async()=>{if(!databaseConfigured())return null;try{return await db.resortSettings.findUnique({where:{id:'resort'}});}catch{return null;}});
+export const getContent=cache(async(key:string)=>{if(!databaseConfigured())return null;try{return await db.websiteContent.findFirst({where:{key,published:true}});}catch{return null;}});
+export const getOfferings=cache(async(kind?:Kind)=>{if(!databaseConfigured())return [];try{return await db.offering.findMany({where:{published:true,verified:true,...(kind?{kind}:{})},include:{resources:{where:{active:true}},images:{where:{approved:true}}},orderBy:{createdAt:'asc'}});}catch{return [];}});
+export const getImages=cache(async()=>{if(!databaseConfigured())return [];try{return await db.galleryImage.findMany({where:{approved:true},orderBy:[{featured:'desc'},{createdAt:'desc'}],take:100});}catch{return [];}});
+export const getFaqs=cache(async()=>{if(!databaseConfigured())return [];try{return await db.websiteContent.findMany({where:{published:true,key:{startsWith:'faq.'}},orderBy:{key:'asc'}});}catch{return [];}});
+export const getMenu=cache(async()=>{if(!databaseConfigured())return [];try{return await db.menuCategory.findMany({include:{items:{where:{published:true}}}});}catch{return [];}});
+export const getAnnouncements=cache(async()=>{if(!databaseConfigured())return [];try{return await db.announcement.findMany({where:{published:true,OR:[{expiresAt:null},{expiresAt:{gt:new Date()}}]},take:3});}catch{return [];}});
