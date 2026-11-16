@@ -1,8 +1,119 @@
-'use client';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useEffect,useState } from 'react';
-import { ArrowUpRight,Menu,X } from 'lucide-react';
-export const navigation=[['Home','/'],['About','/about'],['Stay','/accommodations'],['Adventures','/adventures'],['Swimming','/pool-cottages'],['Dining','/dining'],['Gallery','/gallery'],['Contact','/contact']];
-export function Brand(){return <Link className="brand" href="/" aria-label="Paraiso de June Quixote home"><span className="brand-mark" aria-hidden="true">p<span>✳</span></span><span><strong>paraiso</strong><small>DE JUNE QUIXOTE</small><em>ECOFARM RESORT</em></span></Link>;}
-export function Header(){const path=usePathname();const [open,setOpen]=useState(false);const [scrolled,setScrolled]=useState(false);useEffect(()=>{const scroll=()=>setScrolled(window.scrollY>40);scroll();window.addEventListener('scroll',scroll,{passive:true});return()=>window.removeEventListener('scroll',scroll);},[]);useEffect(()=>{if(!open)return;const previous=document.body.style.overflow;document.body.style.overflow='hidden';const key=(e:KeyboardEvent)=>{if(e.key==='Escape')setOpen(false);};window.addEventListener('keydown',key);return()=>{document.body.style.overflow=previous;window.removeEventListener('keydown',key);};},[open]);return <header className={`site-header ${path==='/'&&!scrolled?'header-hero':''} ${open?'menu-open':''}`}><div className="header-inner"><Brand/><nav className="desktop-nav" aria-label="Main navigation">{navigation.map(([name,href])=><Link key={href} href={href} aria-current={path===href?'page':undefined}>{name}</Link>)}</nav><Link href="/booking" className="nav-book">Plan your visit <ArrowUpRight size={16}/></Link><button aria-label={open?'Close menu':'Open menu'} aria-expanded={open} aria-controls="mobile-navigation" className="menu-toggle" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button></div>{open&&<nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">{navigation.map(([name,href])=><Link key={href} href={href} onClick={()=>setOpen(false)}>{name}<ArrowUpRight size={18}/></Link>)}<Link href="/booking" onClick={()=>setOpen(false)}>Plan your visit <ArrowUpRight size={18}/></Link></nav>}</header>;}
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { navigation } from "@/config/site";
+import { BookingCTA } from "@/components/shared/BookingCTA";
+
+export function Brand() {
+  return (
+    <Link className="brand" href="/" aria-label="Paraiso de June Quixote home">
+      <svg
+        className="brand-mark"
+        viewBox="0 0 40 48"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M20 43V12M20 28C5 30 4 15 5 10c13-1 17 7 15 18ZM20 21C33 24 37 11 35 5c-11 0-17 6-15 16Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path
+          d="M20 43c-4-5-9-5-14-5m14 5c4-5 9-5 14-5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+      </svg>
+      <span>
+        <strong>paraiso</strong>
+        <small>DE JUNE QUIXOTE</small>
+        <em>ECOFARM RESORT</em>
+      </span>
+    </Link>
+  );
+}
+
+export function Header() {
+  const path = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const dialog = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    const scroll = () => setScrolled(window.scrollY > 30);
+    scroll();
+    window.addEventListener("scroll", scroll, { passive: true });
+    return () => window.removeEventListener("scroll", scroll);
+  }, []);
+  const close = () => {
+    dialog.current?.close();
+  };
+  return (
+    <header
+      className={`site-header ${path === "/" && !scrolled ? "header-hero" : ""}`}
+    >
+      <div className="header-inner">
+        <Brand />
+        <nav className="desktop-nav" aria-label="Main navigation">
+          {navigation.map(({ label, href }) => (
+            <Link
+              key={href}
+              href={href}
+              aria-current={
+                path.replace(/\/$/, "") === href.replace(/\/$/, "")
+                  ? "page"
+                  : undefined
+              }
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+        <BookingCTA className="nav-book" />
+        <button
+          aria-label="Open navigation menu"
+          aria-haspopup="dialog"
+          className="menu-toggle"
+          onClick={() => dialog.current?.showModal()}
+        >
+          <Menu />
+        </button>
+      </div>
+      <dialog ref={dialog} className="mobile-menu" aria-label="Main navigation">
+        <div className="mobile-menu-top">
+          <span className="eyebrow">A LITTLE ESCAPE AWAITS</span>
+          <button
+            className="menu-toggle"
+            aria-label="Close navigation menu"
+            onClick={close}
+          >
+            <X />
+          </button>
+        </div>
+        <nav aria-label="Mobile navigation">
+          {navigation.map(({ label, href }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={close}
+              aria-current={
+                path.replace(/\/$/, "") === href.replace(/\/$/, "")
+                  ? "page"
+                  : undefined
+              }
+            >
+              {label}
+              <ArrowUpRight size={18} />
+            </Link>
+          ))}
+          <Link href="/packages/" onClick={close}>
+            Groups & offers
+            <ArrowUpRight size={18} />
+          </Link>
+        </nav>
+        <BookingCTA onClick={close} />
+        <p className="small-copy">Inquiries via the official Facebook page.</p>
+      </dialog>
+    </header>
+  );
+}

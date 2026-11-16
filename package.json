@@ -1,1 +1,34 @@
-{"name":"paraiso-resort","version":"1.0.0","private":true,"scripts":{"dev":"next dev --hostname 0.0.0.0","build":"prisma generate && next build","start":"next start --hostname 0.0.0.0","lint":"eslint .","typecheck":"tsc --noEmit","test":"vitest run","db:generate":"prisma generate","db:migrate":"prisma migrate deploy","db:seed":"tsx prisma/seed.ts","staff:create":"tsx scripts/create-staff.ts"},"dependencies":{"next":"^16.0.0","react":"^19.2.0","react-dom":"^19.2.0","@prisma/client":"^6.19.0","next-auth":"5.0.0-beta.30","@auth/prisma-adapter":"^2.11.0","zod":"^4.1.0","resend":"^6.0.0","lucide-react":"^0.552.0","motion":"^12.23.0","clsx":"^2.1.1","tailwind-merge":"^3.3.0","@radix-ui/react-slot":"^1.2.3","class-variance-authority":"^0.7.1","cloudinary":"^2.8.0"},"devDependencies":{"typescript":"^5.9.0","@types/node":"^24.0.0","@types/react":"^19.2.0","@types/react-dom":"^19.2.0","tailwindcss":"^4.1.0","@tailwindcss/postcss":"^4.1.0","prisma":"^6.19.0","tsx":"^4.20.0","vitest":"^4.0.0","eslint":"^9.39.0","eslint-config-next":"^16.0.0","@electric-sql/pglite":"^0.3.14"}}
+{
+  "name": "paraiso-resort-static",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "preview": "node scripts/preview.mjs",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test scripts/static-audit.test.mjs"
+  },
+  "dependencies": {
+    "next": "^16.4.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "lucide-react": "^0.552.0",
+    "motion": "^12.23.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.0",
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "tailwindcss": "^4.1.0",
+    "@tailwindcss/postcss": "^4.1.0",
+    "eslint": "^9.39.0",
+    "eslint-config-next": "^16.4.6"
+  }
+}

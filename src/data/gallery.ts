@@ -1,0 +1,58 @@
+import type { ResortImage } from "@/types/content";
+// Only approved entries with a source open in the lightbox.
+export const gallery: ResortImage[] = [
+  {
+    id: "landscape",
+    src: null,
+    alt: "Approved resort surroundings photograph pending",
+    title: "A little closer to nature",
+    category: "Nature",
+    approved: false,
+    shape: "wide",
+  },
+  {
+    id: "adventure",
+    src: null,
+    alt: "Approved adventure photograph pending",
+    title: "Take the scenic way",
+    category: "Adventures",
+    approved: false,
+    shape: "portrait",
+  },
+  {
+    id: "pool",
+    src: null,
+    alt: "Approved swimming pool photograph pending",
+    title: "Time for a dip",
+    category: "Swimming",
+    approved: false,
+    shape: "square",
+  },
+  {
+    id: "stay",
+    src: null,
+    alt: "Approved accommodation photograph pending",
+    title: "Stay a little longer",
+    category: "Accommodations",
+    approved: false,
+    shape: "portrait",
+  },
+  {
+    id: "dining",
+    src: null,
+    alt: "Approved restaurant photograph pending",
+    title: "Gather around the table",
+    category: "Dining",
+    approved: false,
+    shape: "wide",
+  },
+  {
+    id: "green",
+    src: null,
+    alt: "Approved resort greenery photograph pending",
+    title: "Room to slow down",
+    category: "Nature",
+    approved: false,
+    shape: "square",
+  },
+];

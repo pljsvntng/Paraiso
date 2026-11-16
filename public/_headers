@@ -1,0 +1,7 @@
+# Host-level security headers for static hosts supporting the _headers convention.
+# Vercel and other hosts must configure equivalent rules separately.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
