@@ -1,31 +1,25 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navigation } from "@/config/site";
-import { BookingCTA } from "@/components/shared/BookingCTA";
+import { resortLogo, resortLogoOnLight } from "@/config/branding";
+import { BookingCTA } from "@/components/shared/booking-cta";
 
-export function Brand() {
+export function Brand({ onDark = false }: { onDark?: boolean }) {
   return (
     <Link className="brand" href="/" aria-label="Paraiso de June Quixote home">
-      <svg
+      <Image
         className="brand-mark"
-        viewBox="0 0 40 48"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M20 43V12M20 28C5 30 4 15 5 10c13-1 17 7 15 18ZM20 21C33 24 37 11 35 5c-11 0-17 6-15 16Z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-        <path
-          d="M20 43c-4-5-9-5-14-5m14 5c4-5 9-5 14-5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-      </svg>
+        src={onDark ? resortLogo : resortLogoOnLight}
+        alt="Paraiso de June Quixote emblem"
+        width={44}
+        height={44}
+        loading="eager"
+        unoptimized
+      />
       <span>
         <strong>paraiso</strong>
         <small>DE JUNE QUIXOTE</small>
@@ -37,23 +31,42 @@ export function Brand() {
 
 export function Header() {
   const path = usePathname();
-  const [scrolled, setScrolled] = useState(false);
+  // A solid header remains readable if observer support or hydration is unavailable.
+  const [scrolled, setScrolled] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
+  const sentinel = useRef<HTMLSpanElement>(null);
+  const menuTrigger = useRef<HTMLButtonElement>(null);
+  // History navigation can change the route while the modal is open.
   useEffect(() => {
-    const scroll = () => setScrolled(window.scrollY > 30);
-    scroll();
-    window.addEventListener("scroll", scroll, { passive: true });
-    return () => window.removeEventListener("scroll", scroll);
-  }, []);
+    dialog.current?.close();
+  }, [path]);
+  useEffect(() => {
+    if (path !== "/" || !sentinel.current || typeof window.IntersectionObserver !== "function") return;
+    let observer: IntersectionObserver | undefined;
+    try {
+      observer = new IntersectionObserver(([entry]) => {
+        setScrolled(!entry.isIntersecting);
+      });
+      observer.observe(sentinel.current);
+    } catch {
+      // The solid base header remains usable if enhancement fails.
+      observer?.disconnect();
+    }
+    return () => observer?.disconnect();
+  }, [path]);
   const close = () => {
     dialog.current?.close();
+    setMenuOpen(false);
   };
   return (
+    <>
+    <span ref={sentinel} className="header-sentinel" aria-hidden="true" />
     <header
       className={`site-header ${path === "/" && !scrolled ? "header-hero" : ""}`}
     >
       <div className="header-inner">
-        <Brand />
+        <Brand onDark={path === "/" && !scrolled} />
         <nav className="desktop-nav" aria-label="Main navigation">
           {navigation.map(({ label, href }) => (
             <Link
@@ -61,6 +74,7 @@ export function Header() {
               href={href}
               aria-current={
                 path.replace(/\/$/, "") === href.replace(/\/$/, "")
+                  || (href !== "/" && path.startsWith(href))
                   ? "page"
                   : undefined
               }
@@ -69,17 +83,39 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <BookingCTA className="nav-book" />
+        <BookingCTA className="nav-book">Book now</BookingCTA>
         <button
+          ref={menuTrigger}
           aria-label="Open navigation menu"
           aria-haspopup="dialog"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
           className="menu-toggle"
-          onClick={() => dialog.current?.showModal()}
+          onClick={() => {
+            dialog.current?.showModal();
+            setMenuOpen(true);
+          }}
         >
           <Menu />
         </button>
       </div>
-      <dialog ref={dialog} className="mobile-menu" aria-label="Main navigation">
+      <dialog
+        id="mobile-navigation"
+        ref={dialog}
+        className="mobile-menu"
+        aria-label="Main navigation"
+        onClose={() => {
+          setMenuOpen(false);
+          if (document.activeElement === document.body) menuTrigger.current?.focus({ preventScroll: true });
+        }}
+        onClick={(event) => {
+          if (
+            event.target === event.currentTarget &&
+            event.clientX < event.currentTarget.getBoundingClientRect().left
+          )
+            close();
+        }}
+      >
         <div className="mobile-menu-top">
           <span className="eyebrow">A LITTLE ESCAPE AWAITS</span>
           <button
@@ -91,13 +127,15 @@ export function Header() {
           </button>
         </div>
         <nav aria-label="Mobile navigation">
-          {navigation.map(({ label, href }) => (
+          {navigation.map(({ label, href }, index) => (
             <Link
               key={href}
               href={href}
               onClick={close}
+              style={{ "--menu-index": index } as CSSProperties}
               aria-current={
                 path.replace(/\/$/, "") === href.replace(/\/$/, "")
+                  || (href !== "/" && path.startsWith(href))
                   ? "page"
                   : undefined
               }
@@ -106,14 +144,15 @@ export function Header() {
               <ArrowUpRight size={18} />
             </Link>
           ))}
-          <Link href="/packages/" onClick={close}>
+          <Link href="/packages/" onClick={close} aria-current={path.replace(/\/$/, "") === "/packages" ? "page" : undefined} style={{ "--menu-index": navigation.length } as CSSProperties}>
             Groups & offers
             <ArrowUpRight size={18} />
           </Link>
         </nav>
         <BookingCTA onClick={close} />
-        <p className="small-copy">Inquiries via the official Facebook page.</p>
+        <p className="small-copy">Reserve on our website. Facebook is also available for inquiries.</p>
       </dialog>
     </header>
+    </>
   );
 }

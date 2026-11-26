@@ -1,0 +1,93 @@
+export type TrackedBooking = {
+  id: string;
+  version: number;
+  reference_number: string;
+  guest_name: string;
+  status: string;
+  workflow_status: string;
+  is_cart?: boolean;
+  reservation_only?: boolean;
+  decline_reason?: string;
+  reviewed_at?: string;
+  items: {
+    id: string;
+    product_id: string;
+    name: string;
+    category: string;
+    overnight: boolean;
+    check_in_date: string;
+    check_out_date: string;
+    slot: string;
+    adult_count: number;
+    child_count: number;
+    units_count: number;
+    special_requests?: string;
+    addons?: { name: string }[];
+  }[];
+  changeRequests?: {
+    id: string;
+    kind: string;
+    message: string;
+    state: string;
+    response?: string;
+  }[];
+};
+export type BookingRow = {
+  public_tracking_reference?: string | null;
+  id: string;
+  reference_number: string;
+  guest_name: string;
+  guest_email: string;
+  guest_phone: string;
+  booking_category: string;
+  product_name: string;
+  check_in_date: string;
+  check_out_date: string;
+  guest_summary?: string;
+  adult_count: number;
+  child_count: number;
+  units_count: number;
+  status: string;
+  special_requests: string;
+  created_at: string;
+  version: number;
+  slot: string;
+  source: string;
+  overnight: boolean;
+  is_cart?: boolean;
+  workflow_status?: string;
+  reservation_only?: boolean;
+  guest_address?: string;
+  additional_phone?: string;
+  reservation_channel?: string;
+  decline_reason?: string;
+  reviewed_at?: string;
+  reviewed_by?: string;
+};
+export type BookingDetail = BookingRow & {
+  items: TrackedBooking["items"];
+  changeRequests?: TrackedBooking["changeRequests"];
+  staff_notes: {
+    id: string;
+    note: string;
+    created_at: string;
+    full_name: string;
+  }[];
+  history: {
+    action: string;
+    previous_status: string | null;
+    new_status: string | null;
+    full_name: string | null;
+    timestamp: string;
+    details: unknown;
+  }[];
+  units: { unit_identifier: string }[];
+  jobs: {
+    id: number;
+    kind: string;
+    state: string;
+    attempts: number;
+    last_error: string | null;
+  }[];
+  addons: { name: string }[];
+};

@@ -2,27 +2,26 @@
 
 ## Research status
 
-The supplied official reference is https://www.facebook.com/paraisodejunequixote.111 . Direct access returned a Facebook temporary-block page; no restrictions were bypassed and no protected media was scraped. Public Google Travel listings corroborate the resort name and reported Maragondon / Mabacao Tulay B location, but do not establish an exact verified pin or current operations. The source of the reported attraction list is the user's project brief. This site does not convert those reports into claims of current availability.
+The supplied official reference is https://www.facebook.com/paraisodejunequixote.111 . Earlier direct access returned a Facebook temporary-block page; no restrictions were bypassed and no protected media was scraped. On 18 November 2026, the exact Google Maps listing was verified against its name, Mabacao / Tulay B address, and matching official Facebook website link. Its official Share > Embed a map URL and directions destination are now configured; see [the map integration report](LOCATION_MAP.md). This verification does not establish current operations. The source of the reported attraction list is the user's project brief. This site does not convert those reports into claims of current availability.
 
 ## Needed from the client
 
-- Official logo in SVG or high-resolution PNG, and approved brand colors. The current botanical wordmark is proposed design work.
-- Authorized landscape hero photograph with room for a left-positioned heading; mobile crop and descriptive alt text.
-- Resort, greenery, wooden architecture, pool, cottage, activity, accommodation, restaurant, and dining photographs; permission to publish identifiable guests.
+- The supplied emblem is integrated as transparent white in `public/branding/icon.svg`, with identical forest-green artwork in `icon-on-light.svg` for cream headers and the favicon. Keep both variants' geometry in sync and rebuild for future updates; see [the logo report](reports/LOGO_UPDATE.md). The surrounding design remains subject to owner approval.
+- Uploaded resort photography is integrated; see [the image integration report](reports/IMAGE-INTEGRATION.md). Permission to publish identifiable guests remains the owner's responsibility.
 - Approved accommodation categories, capacities, bed configurations, amenities, and current rates if public display is wanted.
 - Confirmed currently operating attractions, schedules, prices, participation requirements, and current guest guidance.
 - Cottage names, capacities, rates, swimming access, operating hours, and guest guidelines.
 - Restaurant introduction, actual menu, hours, prices, and dietary inquiry arrangements.
 - Approved packages, inclusions, prices, valid dates, and complete terms. None are currently asserted.
-- Verified exact business address, Google Maps pin/embed, preferred directions URL, contact number, and email.
+- Verified contact number and email. The published address, Google Maps pin/embed, and directions destination are configured; confirm any future listing or arrival-route changes before updating them.
 - Verified history, business copy, accessibility information, and approval of the privacy notice and proposed visual identity.
 - Final website domain and a separate reservation URL from the development partner.
 
 ## Add photographs
 
-Place authorized, resized assets in `public/images/<category>/`. Keep descriptive filenames, sensible compression, and adequate resolution; avoid shipping camera originals. Add the relevant `/images/...` path to `site.heroImage`, a page's `Media` component, or the typed content record. The homepage uses the configured hero automatically when available.
+Preserve authorized originals in `public/images/<category>/`. Add visually verified subjects and accurate alt text to `src/data/photo-catalog.json`, then run `npm run images:prepare` (also runs before production builds). This generates smaller delivery copies without modifying the originals. `src/config/media.ts` shares the catalog across page sections and the gallery. The legacy `site.heroImage` is still supported and takes precedence over the centralized hero source.
 
-For the gallery, set a real `src`, accurate `alt`, and `approved: true` in `src/data/gallery.ts`. Only approved real sources open in the lightbox. Do not set `approved: true` for the existing layout placeholders. No resort photographs have been supplied or removed during this conversion.
+The gallery collection in `src/data/gallery.ts` derives sources from the reviewed catalog. Keep uncertain photos outside that catalog until their subjects are identified. All uploaded originals were preserved during integration. Check image loading, crops, alt text, and file size after adding photographs.
 
 For accommodations and packages, add records in their typed data files and publish only approved records. For adventures, set `confirmed` after current operations are approved, add authorized images, and revise copy/status to match the verified information.
 

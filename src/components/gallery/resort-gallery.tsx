@@ -1,160 +1,112 @@
 "use client";
 import { useRef, useState } from "react";
-import Image from "next/image";
-import { ArrowLeft, ArrowRight, X, Maximize2 } from "lucide-react";
+import { Maximize2 } from "lucide-react";
 import { gallery } from "@/data/gallery";
 import { Media } from "@/components/media";
-import type { MediaCategory, ResortImage } from "@/types/content";
+import { PhotoLightbox } from "@/components/shared/photo-lightbox";
 
-const filters: ("All moments" | MediaCategory)[] = [
+const seen = new Set<string>();
+const published = gallery.filter((image) => {
+  const key = image.originalSrc || image.src;
+  if (!image.approved || !image.src || !key || seen.has(key)) return false;
+  seen.add(key);
+  return true;
+});
+const filters = [
   "All moments",
-  "Nature",
-  "Adventures",
-  "Swimming",
-  "Accommodations",
-  "Dining",
+  ...new Set(published.map((image) => image.category)),
 ];
-
-export function ResortGallery() {
-  const [filter, setFilter] = useState<string>("All moments");
-  const [active, setActive] = useState<string | null>(null);
-  const dialog = useRef<HTMLDialogElement>(null);
-  const visible = gallery.filter(
+export function ResortGallery({ preview = false }: { preview?: boolean }) {
+  const trigger = useRef<HTMLButtonElement | null>(null);
+  const [filter, setFilter] = useState("All moments");
+  const [active, setActive] = useState<number | null>(null);
+  const [limit, setLimit] = useState(12);
+  const selection = published.filter(
     (image) => filter === "All moments" || image.category === filter,
   );
-  const approved = visible.filter((image) => image.approved && image.src);
-  const index = approved.findIndex((image) => image.id === active);
-  const current = approved[index];
-
-  function open(image: ResortImage) {
-    setActive(image.id);
-    dialog.current?.showModal();
-  }
-  function step(direction: number) {
-    if (approved.length < 2) return;
-    setActive(
-      approved[(index + direction + approved.length) % approved.length].id,
-    );
-  }
-  function reset() {
-    setActive(null);
-  }
-
+  const visible = selection.slice(0, preview ? 3 : limit);
+  const viewed = preview ? visible : selection;
   return (
-    <section className="container" aria-label="Resort photo gallery">
-      <div className="gallery-filters" aria-label="Filter gallery by category">
-        {filters.map((category) => (
-          <button
-            key={category}
-            aria-pressed={filter === category}
-            onClick={() => setFilter(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+    <div
+      className={`container ${preview ? "gallery-preview" : ""}`}
+      aria-label="Resort photo gallery"
+    >
+      {!preview && (
+        <div
+          className="gallery-filters"
+          aria-label="Filter gallery by category"
+        >
+          {filters.map((category) => (
+            <button
+              type="button"
+              key={category}
+              aria-pressed={filter === category}
+              onClick={() => {
+                setFilter(category);
+                setLimit(12);
+              }}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      )}
       <p className="gallery-note" role="status">
-        {approved.length
-          ? `${approved.length} approved ${approved.length === 1 ? "photograph" : "photographs"} in this selection. Select a photograph to open the viewer.`
-          : "Our photo album is being prepared. These labeled layout placeholders will be replaced with approved resort photographs."}
+        {selection.length
+          ? `${selection.length} ${selection.length === 1 ? "photograph" : "photographs"}. Select a photo for a closer look.`
+          : "Our resort photo collection is coming soon."}
       </p>
       <div className="gallery-grid">
-        {visible.map((image) => (
+        {visible.map((image, index) => (
           <figure key={image.id} className={`gallery-item ${image.shape}`}>
-            {image.approved && image.src ? (
-              <button
-                onClick={() => open(image)}
-                aria-label={`View ${image.title}`}
-              >
-                <Media src={image.src} alt={image.alt} label={image.title} />
-                <span className="sr-only">Open photograph</span>
-              </button>
-            ) : (
+            <button
+              type="button"
+              onClick={(event) => {
+                trigger.current = event.currentTarget;
+                setActive(index);
+              }}
+              aria-haspopup="dialog"
+              aria-label={`View ${image.title}`}
+            >
               <Media
-                label={image.title}
+                src={image.src}
                 alt={image.alt}
-                className={
-                  image.category === "Swimming"
-                    ? "media-lagoon"
-                    : image.category === "Accommodations"
-                      ? "media-warm"
-                      : image.category === "Dining"
-                        ? "media-clay"
-                        : ""
-                }
+                label={image.title}
+                natural={!preview}
+                sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1050px) 45vw, 30vw"
               />
-            )}
+              <span className="sr-only">Open photograph</span>
+            </button>
             <figcaption>
-              <span>{image.category}</span>
-              {image.approved && image.src ? (
-                <Maximize2 size={13} aria-hidden="true" />
-              ) : (
-                <small>Approved photograph to follow</small>
-              )}
+              <span>
+                {image.category} · {image.title}
+              </span>
+              <Maximize2 size={13} aria-hidden="true" />
             </figcaption>
           </figure>
         ))}
       </div>
-      <dialog
-        ref={dialog}
-        className="lightbox"
-        aria-label="Resort photograph viewer"
-        onClose={reset}
-        onKeyDown={(event) => {
-          if (event.key === "ArrowRight") {
-            event.preventDefault();
-            step(1);
-          }
-          if (event.key === "ArrowLeft") {
-            event.preventDefault();
-            step(-1);
-          }
-        }}
-      >
-        <div className="lightbox-top">
-          <span>
-            {current?.category} · {index + 1} / {approved.length}
-          </span>
+      {!preview && visible.length < selection.length && (
+        <div className="gallery-more">
           <button
-            className="icon-button"
-            aria-label="Close photograph viewer"
-            onClick={() => dialog.current?.close()}
+            className="button button-outline"
+            type="button"
+            onClick={() => setLimit((value) => value + 12)}
           >
-            <X size={20} />
+            Show more photographs ({visible.length} of {selection.length})
           </button>
         </div>
-        {current?.src && (
-          <div className="lightbox-stage">
-            <Image
-              src={current.src}
-              alt={current.alt}
-              fill
-              sizes="(max-width: 700px) 100vw, 1100px"
-            />
-          </div>
-        )}
-        <div className="lightbox-controls">
-          <p aria-live="polite">{current?.title}</p>
-          <div>
-            <button
-              className="icon-button"
-              disabled={approved.length < 2}
-              aria-label="Previous photograph"
-              onClick={() => step(-1)}
-            >
-              <ArrowLeft size={19} />
-            </button>
-            <button
-              className="icon-button"
-              disabled={approved.length < 2}
-              aria-label="Next photograph"
-              onClick={() => step(1)}
-            >
-              <ArrowRight size={19} />
-            </button>
-          </div>
-        </div>
-      </dialog>
-    </section>
+      )}
+      <PhotoLightbox
+        photos={viewed.map((image) => ({ ...image, src: image.src! }))}
+        active={active}
+        onActiveChange={setActive}
+        onClose={() => {
+          setActive(null);
+          trigger.current?.focus({ preventScroll: true });
+        }}
+        label="Resort photograph viewer"
+      />
+    </div>
   );
 }

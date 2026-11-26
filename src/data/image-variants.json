@@ -1,0 +1,272 @@
+{
+  "/images/hero/paraiso_aerial_website_16x9.webp": {
+    "src": "/images/optimized/hero-0cc7f0e44102-1920.webp",
+    "width": 1920,
+    "height": 1080,
+    "srcSet": "/images/optimized/hero-0cc7f0e44102-160.webp 160w, /images/optimized/hero-0cc7f0e44102-480.webp 480w, /images/optimized/hero-0cc7f0e44102-960.webp 960w, /images/optimized/hero-0cc7f0e44102-1920.webp 1920w",
+    "mobile": {
+      "src": "/images/optimized/hero-mobile-0cc7f0e44102-648.webp",
+      "srcSet": "/images/optimized/hero-mobile-0cc7f0e44102-480.webp 480w, /images/optimized/hero-mobile-0cc7f0e44102-648.webp 648w",
+      "width": 648,
+      "height": 1080
+    }
+  },
+  "/images/hero/paraiso.png": {
+    "src": "/images/cinematic/pool-aerial.webp",
+    "width": 1600,
+    "height": 901,
+    "srcSet": "/images/optimized/nature-2e6a905cc491-160.webp 160w, /images/optimized/nature-2e6a905cc491-480.webp 480w, /images/optimized/nature-2e6a905cc491-960.webp 960w, /images/cinematic/pool-aerial.webp 1600w"
+  },
+  "/images/adventures/Skywalk.png": {
+    "src": "/images/cinematic/skywalk.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/optimized/skywalk-004509588b71-160.webp 160w, /images/optimized/skywalk-004509588b71-480.webp 480w, /images/optimized/skywalk-004509588b71-960.webp 960w, /images/cinematic/skywalk.webp 1448w"
+  },
+  "/images/adventures/Tropical ATV Adventure Trail.png": {
+    "src": "/images/cinematic/atv-riding.webp",
+    "width": 1600,
+    "height": 800,
+    "srcSet": "/images/optimized/trail-6e36a1d64fe7-160.webp 160w, /images/optimized/trail-6e36a1d64fe7-480.webp 480w, /images/optimized/trail-6e36a1d64fe7-960.webp 960w, /images/cinematic/atv-riding.webp 1600w"
+  },
+  "/images/adventures/cablejeep.png": {
+    "src": "/images/cinematic/cable-jeep.webp",
+    "width": 1450,
+    "height": 1085,
+    "srcSet": "/images/optimized/cableJeep-f818f72d3eae-160.webp 160w, /images/optimized/cableJeep-f818f72d3eae-480.webp 480w, /images/optimized/cableJeep-f818f72d3eae-960.webp 960w, /images/cinematic/cable-jeep.webp 1450w"
+  },
+  "/images/adventures/Cavite-Swing.png": {
+    "src": "/images/optimized/swing-2e1628ef18b3-1600.webp",
+    "width": 1672,
+    "height": 941,
+    "srcSet": "/images/optimized/swing-2e1628ef18b3-160.webp 160w, /images/optimized/swing-2e1628ef18b3-480.webp 480w, /images/optimized/swing-2e1628ef18b3-960.webp 960w, /images/optimized/swing-2e1628ef18b3-1600.webp 1600w"
+  },
+  "/images/adventures/Crystal-kayaking.png": {
+    "src": "/images/optimized/kayaking-162252c16911-1600.webp",
+    "width": 1671,
+    "height": 941,
+    "srcSet": "/images/optimized/kayaking-162252c16911-160.webp 160w, /images/optimized/kayaking-162252c16911-480.webp 480w, /images/optimized/kayaking-162252c16911-960.webp 960w, /images/optimized/kayaking-162252c16911-1600.webp 1600w"
+  },
+  "/images/adventures/Rainbow-Bridge.png": {
+    "src": "/images/optimized/rainbowBridge-0a80c544cacf-1448.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/optimized/rainbowBridge-0a80c544cacf-160.webp 160w, /images/optimized/rainbowBridge-0a80c544cacf-480.webp 480w, /images/optimized/rainbowBridge-0a80c544cacf-960.webp 960w, /images/optimized/rainbowBridge-0a80c544cacf-1448.webp 1448w"
+  },
+  "/images/adventures/ZipBike.png": {
+    "src": "/images/optimized/zipBike-ba7e8b1f601b-1600.webp",
+    "width": 1672,
+    "height": 941,
+    "srcSet": "/images/optimized/zipBike-ba7e8b1f601b-160.webp 160w, /images/optimized/zipBike-ba7e8b1f601b-480.webp 480w, /images/optimized/zipBike-ba7e8b1f601b-960.webp 960w, /images/optimized/zipBike-ba7e8b1f601b-1600.webp 1600w"
+  },
+  "/images/adventures/Zipline.png": {
+    "src": "/images/optimized/zipline-6da3453054bf-1600.webp",
+    "width": 1672,
+    "height": 941,
+    "srcSet": "/images/optimized/zipline-6da3453054bf-160.webp 160w, /images/optimized/zipline-6da3453054bf-480.webp 480w, /images/optimized/zipline-6da3453054bf-960.webp 960w, /images/optimized/zipline-6da3453054bf-1600.webp 1600w"
+  },
+  "/images/dining/Dining.png": {
+    "src": "/images/optimized/dining-4e58847b6ea8-1448.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/optimized/dining-4e58847b6ea8-160.webp 160w, /images/optimized/dining-4e58847b6ea8-480.webp 480w, /images/optimized/dining-4e58847b6ea8-960.webp 960w, /images/optimized/dining-4e58847b6ea8-1448.webp 1448w"
+  },
+  "/images/dining/Dining-2.png": {
+    "src": "/images/optimized/diningHall-0020ce4f7b32-1448.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/optimized/diningHall-0020ce4f7b32-160.webp 160w, /images/optimized/diningHall-0020ce4f7b32-480.webp 480w, /images/optimized/diningHall-0020ce4f7b32-960.webp 960w, /images/optimized/diningHall-0020ce4f7b32-1448.webp 1448w"
+  },
+  "/images/accommodations/Tropical Pavilion and Garden Walkway.png": {
+    "src": "/images/optimized/pavilion-4da6b71102cc-1600.webp",
+    "width": 1672,
+    "height": 941,
+    "srcSet": "/images/optimized/pavilion-4da6b71102cc-160.webp 160w, /images/optimized/pavilion-4da6b71102cc-480.webp 480w, /images/optimized/pavilion-4da6b71102cc-960.webp 960w, /images/optimized/pavilion-4da6b71102cc-1600.webp 1600w"
+  },
+  "/images/swimming/paraiso_main_pool_website_16x9.webp": {
+    "src": "/images/swimming/paraiso_main_pool_website_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/pool-46777843e08d-160.webp 160w, /images/optimized/pool-46777843e08d-480.webp 480w, /images/optimized/pool-46777843e08d-960.webp 960w, /images/swimming/paraiso_main_pool_website_16x9.webp 1600w"
+  },
+  "/images/swimming/paraiso_blue_pool_website_16x9.webp": {
+    "src": "/images/swimming/paraiso_blue_pool_website_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/bluePool-7444957c6f5a-160.webp 160w, /images/optimized/bluePool-7444957c6f5a-480.webp 480w, /images/optimized/bluePool-7444957c6f5a-960.webp 960w, /images/swimming/paraiso_blue_pool_website_16x9.webp 1600w"
+  },
+  "/images/swimming/Tropical Garden Pool Retreat.png": {
+    "src": "/images/optimized/miniPool-05f98203f703-1448.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/optimized/miniPool-05f98203f703-160.webp 160w, /images/optimized/miniPool-05f98203f703-480.webp 480w, /images/optimized/miniPool-05f98203f703-960.webp 960w, /images/optimized/miniPool-05f98203f703-1448.webp 1448w"
+  },
+  "/images/swimming/Nature Pool Entrance Adventure.png": {
+    "src": "/images/optimized/naturePool-a5ab7ac3b8a2-1536.webp",
+    "width": 1536,
+    "height": 1024,
+    "srcSet": "/images/optimized/naturePool-a5ab7ac3b8a2-160.webp 160w, /images/optimized/naturePool-a5ab7ac3b8a2-480.webp 480w, /images/optimized/naturePool-a5ab7ac3b8a2-960.webp 960w, /images/optimized/naturePool-a5ab7ac3b8a2-1536.webp 1536w"
+  },
+  "/images/gallery/paraiso_kids_pool_website_16x9.webp": {
+    "src": "/images/gallery/paraiso_kids_pool_website_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/kidsPool-b4162ea72ba3-160.webp 160w, /images/optimized/kidsPool-b4162ea72ba3-480.webp 480w, /images/optimized/kidsPool-b4162ea72ba3-960.webp 960w, /images/gallery/paraiso_kids_pool_website_16x9.webp 1600w"
+  },
+  "/images/swimming/paraiso_water_play_gallery.webp": {
+    "src": "/images/swimming/paraiso_water_play_gallery.webp",
+    "width": 1600,
+    "height": 1200,
+    "srcSet": "/images/optimized/waterPlay-b68e024837ac-160.webp 160w, /images/optimized/waterPlay-b68e024837ac-480.webp 480w, /images/optimized/waterPlay-b68e024837ac-960.webp 960w, /images/swimming/paraiso_water_play_gallery.webp 1600w"
+  },
+  "/images/swimming/paraiso_water_slides_website_16x9.webp": {
+    "src": "/images/swimming/paraiso_water_slides_website_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/waterSlides-3de8a86a657f-160.webp 160w, /images/optimized/waterSlides-3de8a86a657f-480.webp 480w, /images/optimized/waterSlides-3de8a86a657f-960.webp 960w, /images/swimming/paraiso_water_slides_website_16x9.webp 1600w"
+  },
+  "/images/swimming/pool_playground_professionally_aligned_16x9.webp": {
+    "src": "/images/swimming/pool_playground_professionally_aligned_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/poolPlayground-48cd9e370733-160.webp 160w, /images/optimized/poolPlayground-48cd9e370733-480.webp 480w, /images/optimized/poolPlayground-48cd9e370733-960.webp 960w, /images/swimming/pool_playground_professionally_aligned_16x9.webp 1600w"
+  },
+  "/images/accommodations/hillside_cabins_professionally_aligned_16x9.webp": {
+    "src": "/images/accommodations/hillside_cabins_professionally_aligned_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/stay-c45428c34fbe-160.webp 160w, /images/optimized/stay-c45428c34fbe-480.webp 480w, /images/optimized/stay-c45428c34fbe-960.webp 960w, /images/accommodations/hillside_cabins_professionally_aligned_16x9.webp 1600w"
+  },
+  "/images/accommodations/private_cabin_professionally_aligned_full.webp": {
+    "src": "/images/optimized/privateCabin-332dd1bb5cae-1536.webp",
+    "width": 1536,
+    "height": 2048,
+    "srcSet": "/images/optimized/privateCabin-332dd1bb5cae-160.webp 160w, /images/optimized/privateCabin-332dd1bb5cae-480.webp 480w, /images/optimized/privateCabin-332dd1bb5cae-960.webp 960w, /images/optimized/privateCabin-332dd1bb5cae-1536.webp 1536w"
+  },
+  "/images/accommodations/deluxe_room_professionally_aligned_16x9.webp": {
+    "src": "/images/accommodations/deluxe_room_professionally_aligned_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/bedroom-69887972133a-160.webp 160w, /images/optimized/bedroom-69887972133a-480.webp 480w, /images/optimized/bedroom-69887972133a-960.webp 960w, /images/accommodations/deluxe_room_professionally_aligned_16x9.webp 1600w"
+  },
+  "/images/accommodations/bunk_room_professionally_aligned_full.webp": {
+    "src": "/images/accommodations/bunk_room_professionally_aligned_full.webp",
+    "width": 2048,
+    "height": 1536,
+    "srcSet": "/images/optimized/bunkRoom-319ae17cb606-160.webp 160w, /images/optimized/bunkRoom-319ae17cb606-480.webp 480w, /images/optimized/bunkRoom-319ae17cb606-960.webp 960w, /images/accommodations/bunk_room_professionally_aligned_full.webp 2048w"
+  },
+  "/images/accommodations/glamping_tents_professionally_aligned_16x9.webp": {
+    "src": "/images/accommodations/glamping_tents_professionally_aligned_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/glamping-92002f709943-160.webp 160w, /images/optimized/glamping-92002f709943-480.webp 480w, /images/optimized/glamping-92002f709943-960.webp 960w, /images/accommodations/glamping_tents_professionally_aligned_16x9.webp 1600w"
+  },
+  "/images/accommodations/night_camping_professionally_aligned_full.webp": {
+    "src": "/images/accommodations/night_camping_professionally_aligned_full.webp",
+    "width": 2048,
+    "height": 1536,
+    "srcSet": "/images/optimized/nightCamping-cc994f7f950a-160.webp 160w, /images/optimized/nightCamping-cc994f7f950a-480.webp 480w, /images/optimized/nightCamping-cc994f7f950a-960.webp 960w, /images/accommodations/night_camping_professionally_aligned_full.webp 2048w"
+  },
+  "/images/gallery/ATV Adventure on a Dusty Trail.png": {
+    "src": "/images/optimized/atvDust-e1409d135ab2-1448.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/optimized/atvDust-e1409d135ab2-160.webp 160w, /images/optimized/atvDust-e1409d135ab2-480.webp 480w, /images/optimized/atvDust-e1409d135ab2-960.webp 960w, /images/optimized/atvDust-e1409d135ab2-1448.webp 1448w"
+  },
+  "/images/gallery/giant_swing_professionally_aligned_16x9.webp": {
+    "src": "/images/gallery/giant_swing_professionally_aligned_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/giantSwing-514ab6326022-160.webp 160w, /images/optimized/giantSwing-514ab6326022-480.webp 480w, /images/optimized/giantSwing-514ab6326022-960.webp 960w, /images/gallery/giant_swing_professionally_aligned_16x9.webp 1600w"
+  },
+  "/images/gallery/paraiso_atv_group_website_16x9.webp": {
+    "src": "/images/gallery/paraiso_atv_group_website_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/atvGroup-7c87dd910684-160.webp 160w, /images/optimized/atvGroup-7c87dd910684-480.webp 480w, /images/optimized/atvGroup-7c87dd910684-960.webp 960w, /images/gallery/paraiso_atv_group_website_16x9.webp 1600w"
+  },
+  "/images/gallery/paraiso_atv_riders_website_16x9.webp": {
+    "src": "/images/gallery/paraiso_atv_riders_website_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/atvRiders-1b3b9546cbd4-160.webp 160w, /images/optimized/atvRiders-1b3b9546cbd4-480.webp 480w, /images/optimized/atvRiders-1b3b9546cbd4-960.webp 960w, /images/gallery/paraiso_atv_riders_website_16x9.webp 1600w"
+  },
+  "/images/gallery/paraiso_atv_riverside_group_website_16x9.webp": {
+    "src": "/images/gallery/paraiso_atv_riverside_group_website_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/atvRiversideGroup-61414a38a593-160.webp 160w, /images/optimized/atvRiversideGroup-61414a38a593-480.webp 480w, /images/optimized/atvRiversideGroup-61414a38a593-960.webp 960w, /images/gallery/paraiso_atv_riverside_group_website_16x9.webp 1600w"
+  },
+  "/images/gallery/paraiso_atv_riverside_trail_website_16x9.webp": {
+    "src": "/images/gallery/paraiso_atv_riverside_trail_website_16x9.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/atvRiversideTrail-6e76136b1240-160.webp 160w, /images/optimized/atvRiversideTrail-6e76136b1240-480.webp 480w, /images/optimized/atvRiversideTrail-6e76136b1240-960.webp 960w, /images/gallery/paraiso_atv_riverside_trail_website_16x9.webp 1600w"
+  },
+  "/images/gallery/paraiso_atv_trail_website_16x9.webp": {
+    "src": "/images/optimized/atvTrail-c2f0cec73876-1600.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/atvTrail-c2f0cec73876-160.webp 160w, /images/optimized/atvTrail-c2f0cec73876-480.webp 480w, /images/optimized/atvTrail-c2f0cec73876-960.webp 960w, /images/optimized/atvTrail-c2f0cec73876-1600.webp 1600w"
+  },
+  "/images/gallery/paraiso_hanging_bridge_website_16x9.webp": {
+    "src": "/images/optimized/hangingBridge-bcd8114b9ade-1600.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/hangingBridge-bcd8114b9ade-160.webp 160w, /images/optimized/hangingBridge-bcd8114b9ade-480.webp 480w, /images/optimized/hangingBridge-bcd8114b9ade-960.webp 960w, /images/optimized/hangingBridge-bcd8114b9ade-1600.webp 1600w"
+  },
+  "/images/gallery/paraiso_zipline_website_16x9.webp": {
+    "src": "/images/optimized/ziplinePlatform-011ca6d66ccd-1600.webp",
+    "width": 1600,
+    "height": 900,
+    "srcSet": "/images/optimized/ziplinePlatform-011ca6d66ccd-160.webp 160w, /images/optimized/ziplinePlatform-011ca6d66ccd-480.webp 480w, /images/optimized/ziplinePlatform-011ca6d66ccd-960.webp 960w, /images/optimized/ziplinePlatform-011ca6d66ccd-1600.webp 1600w"
+  },
+  "/images/accommodations/fmly_deluxe.jpg": {
+    "src": "/images/optimized/familyDeluxeExterior-dfa58426f1b3-798.webp",
+    "width": 798,
+    "height": 733,
+    "srcSet": "/images/optimized/familyDeluxeExterior-dfa58426f1b3-160.webp 160w, /images/optimized/familyDeluxeExterior-dfa58426f1b3-480.webp 480w, /images/optimized/familyDeluxeExterior-dfa58426f1b3-798.webp 798w"
+  },
+  "/images/accommodations/family_deluxe.jpg": {
+    "src": "/images/optimized/familyDeluxeInterior-83264aca534d-783.webp",
+    "width": 783,
+    "height": 732,
+    "srcSet": "/images/optimized/familyDeluxeInterior-83264aca534d-160.webp 160w, /images/optimized/familyDeluxeInterior-83264aca534d-480.webp 480w, /images/optimized/familyDeluxeInterior-83264aca534d-783.webp 783w"
+  },
+  "/images/accommodations/Igloo-pax.png": {
+    "src": "/images/optimized/iglooExterior-23fc1d344bd2-1448.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/optimized/iglooExterior-23fc1d344bd2-160.webp 160w, /images/optimized/iglooExterior-23fc1d344bd2-480.webp 480w, /images/optimized/iglooExterior-23fc1d344bd2-960.webp 960w, /images/optimized/iglooExterior-23fc1d344bd2-1448.webp 1448w"
+  },
+  "/images/accommodations/Igloo-2pax.png": {
+    "src": "/images/optimized/iglooInterior-e43f470bf328-1448.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/optimized/iglooInterior-e43f470bf328-160.webp 160w, /images/optimized/iglooInterior-e43f470bf328-480.webp 480w, /images/optimized/iglooInterior-e43f470bf328-960.webp 960w, /images/optimized/iglooInterior-e43f470bf328-1448.webp 1448w"
+  },
+  "/images/accommodations/wooden_brck.png": {
+    "src": "/images/optimized/woodenBrickExterior-3b542440210e-1448.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/optimized/woodenBrickExterior-3b542440210e-160.webp 160w, /images/optimized/woodenBrickExterior-3b542440210e-480.webp 480w, /images/optimized/woodenBrickExterior-3b542440210e-960.webp 960w, /images/optimized/woodenBrickExterior-3b542440210e-1448.webp 1448w"
+  },
+  "/images/accommodations/wooden_brick.png": {
+    "src": "/images/optimized/woodenBrickInterior-89eec84411d5-1448.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/optimized/woodenBrickInterior-89eec84411d5-160.webp 160w, /images/optimized/woodenBrickInterior-89eec84411d5-480.webp 480w, /images/optimized/woodenBrickInterior-89eec84411d5-960.webp 960w, /images/optimized/woodenBrickInterior-89eec84411d5-1448.webp 1448w"
+  },
+  "/images/accommodations/stndrd_cabin.png": {
+    "src": "/images/optimized/standardCabinInterior-0103aac655b3-1448.webp",
+    "width": 1448,
+    "height": 1086,
+    "srcSet": "/images/optimized/standardCabinInterior-0103aac655b3-160.webp 160w, /images/optimized/standardCabinInterior-0103aac655b3-480.webp 480w, /images/optimized/standardCabinInterior-0103aac655b3-960.webp 960w, /images/optimized/standardCabinInterior-0103aac655b3-1448.webp 1448w"
+  },
+  "/images/accommodations/bunkhouse.webp": {
+    "src": "/images/accommodations/bunkhouse.webp",
+    "width": 2048,
+    "height": 1536,
+    "srcSet": "/images/optimized/bunkhouseInterior-319ae17cb606-160.webp 160w, /images/optimized/bunkhouseInterior-319ae17cb606-480.webp 480w, /images/optimized/bunkhouseInterior-319ae17cb606-960.webp 960w, /images/accommodations/bunkhouse.webp 2048w"
+  }
+}

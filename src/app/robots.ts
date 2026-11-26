@@ -5,7 +5,17 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      ...(site.allowIndexing ? { allow: "/" } : { disallow: "/" }),
+      ...(site.allowIndexing
+        ? {
+            allow: "/",
+            disallow: [
+              "/admin/",
+              "/api/",
+              "/booking/confirmation/",
+              "/booking/track/",
+            ],
+          }
+        : { disallow: "/" }),
     },
     ...(site.url ? { sitemap: `${site.url}/sitemap.xml` } : {}),
   };

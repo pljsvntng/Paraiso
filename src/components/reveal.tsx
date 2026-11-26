@@ -1,5 +1,5 @@
-"use client";
-import { motion, useReducedMotion } from "motion/react";
+/** Static markup stays readable before hydration and without JavaScript.
+ * MotionExperience progressively enhances these markers with the shared observer. */
 export function Reveal({
   children,
   className = "",
@@ -7,16 +7,9 @@ export function Reveal({
   children: React.ReactNode;
   className?: string;
 }) {
-  const reduced = useReducedMotion();
   return (
-    <motion.div
-      className={className}
-      initial={reduced ? false : { opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div className={className} data-reveal="rise">
       {children}
-    </motion.div>
+    </div>
   );
 }

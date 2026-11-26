@@ -1,0 +1,261 @@
+{
+  "hero": {
+    "src": "/images/hero/paraiso_aerial_website_16x9.webp",
+    "title": "Paraiso from above",
+    "category": "Nature",
+    "alt": "Aerial view of the pools, hillside buildings, and green resort grounds",
+    "position": "48% 55%"
+  },
+  "nature": {
+    "src": "/images/hero/paraiso.png",
+    "title": "Pools among the trees",
+    "category": "Nature",
+    "alt": "Aerial view of the bright blue pools surrounded by trees at Paraiso",
+    "position": "50% 60%",
+    "delivery": "/images/cinematic/pool-aerial.webp"
+  },
+  "skywalk": {
+    "src": "/images/adventures/Skywalk.png",
+    "title": "Skywalk entrance",
+    "category": "Adventures",
+    "alt": "Stone Skywalk gateway with suspended cables above a garden path",
+    "position": "48% 45%",
+    "delivery": "/images/cinematic/skywalk.webp"
+  },
+  "trail": {
+    "src": "/images/adventures/Tropical ATV Adventure Trail.png",
+    "title": "ATVs on the trail",
+    "category": "Adventures",
+    "alt": "A line of ATV riders following a dirt trail through the green hillside",
+    "position": "55% 55%",
+    "delivery": "/images/cinematic/atv-riding.webp"
+  },
+  "cableJeep": {
+    "src": "/images/adventures/cablejeep.png",
+    "title": "Cable Jeep",
+    "category": "Adventures",
+    "alt": "Cable Jeep vehicle and raised boarding platform among the trees",
+    "position": "50% 40%",
+    "delivery": "/images/cinematic/cable-jeep.webp"
+  },
+  "swing": {
+    "src": "/images/adventures/Cavite-Swing.png",
+    "title": "Cavite Swing",
+    "category": "Adventures",
+    "alt": "A rider on the pink swing suspended above the river valley",
+    "position": "40% 55%"
+  },
+  "kayaking": {
+    "src": "/images/adventures/Crystal-kayaking.png",
+    "title": "Crystal kayaking",
+    "category": "Adventures",
+    "alt": "Two guests paddling a clear kayak on the river beside rocky banks",
+    "position": "50% 65%"
+  },
+  "rainbowBridge": {
+    "src": "/images/adventures/Rainbow-Bridge.png",
+    "title": "Rainbow Bridge",
+    "category": "Adventures",
+    "alt": "Colourful suspended bridge crossing the green valley",
+    "position": "50% 55%"
+  },
+  "zipBike": {
+    "src": "/images/adventures/ZipBike.png",
+    "title": "Zip Bike",
+    "category": "Adventures",
+    "alt": "Guests riding suspended bicycles across the valley",
+    "position": "50% 50%"
+  },
+  "zipline": {
+    "src": "/images/adventures/Zipline.png",
+    "title": "Zipline across the valley",
+    "category": "Adventures",
+    "alt": "Two guests riding parallel ziplines over the green hillside",
+    "position": "40% 50%"
+  },
+  "dining": {
+    "src": "/images/dining/Dining.png",
+    "title": "Dining pavilion",
+    "category": "Dining",
+    "alt": "Arched entrance of the dining pavilion framed by palm trees",
+    "position": "50% 45%"
+  },
+  "diningHall": {
+    "src": "/images/dining/Dining-2.png",
+    "title": "Inside the dining hall",
+    "category": "Dining",
+    "alt": "Tables and chairs beneath timber roof trusses and warm lights in the dining hall",
+    "position": "50% 50%"
+  },
+  "pavilion": {
+    "src": "/images/accommodations/Tropical Pavilion and Garden Walkway.png",
+    "title": "Garden dining cabanas",
+    "category": "Resort Facilities",
+    "alt": "Covered wooden tables beside a paved garden walkway",
+    "position": "45% 55%"
+  },
+  "pool": {
+    "src": "/images/swimming/paraiso_main_pool_website_16x9.webp",
+    "title": "Main pool",
+    "category": "Swimming",
+    "alt": "Main swimming pool with a curved poolside deck, trees, and resort buildings",
+    "position": "50% 60%"
+  },
+  "bluePool": {
+    "src": "/images/swimming/paraiso_blue_pool_website_16x9.webp",
+    "title": "Blue pool",
+    "category": "Swimming",
+    "alt": "Curved blue swimming pool with a rock-edged island and shaded poolside shelters",
+    "position": "50% 60%"
+  },
+  "miniPool": {
+    "src": "/images/swimming/Tropical Garden Pool Retreat.png",
+    "title": "Garden pool",
+    "category": "Swimming",
+    "alt": "Small curved swimming pool surrounded by tropical planting and stonework",
+    "position": "50% 60%"
+  },
+  "naturePool": {
+    "src": "/images/swimming/Nature Pool Entrance Adventure.png",
+    "title": "Nature pool entrance",
+    "category": "Swimming",
+    "alt": "Colourful flags and an entrance sign reading Nature Pool in front of the swimming area",
+    "position": "50% 50%"
+  },
+  "kidsPool": {
+    "src": "/images/gallery/paraiso_kids_pool_website_16x9.webp",
+    "title": "Kids’ pool moments",
+    "category": "Swimming",
+    "alt": "Children and adults playing with a green inflatable in the pool",
+    "position": "50% 50%"
+  },
+  "waterPlay": {
+    "src": "/images/swimming/paraiso_water_play_gallery.webp",
+    "title": "Water play area",
+    "category": "Swimming",
+    "alt": "Blue and orange slides around a play structure in the swimming pool",
+    "position": "50% 50%"
+  },
+  "waterSlides": {
+    "src": "/images/swimming/paraiso_water_slides_website_16x9.webp",
+    "title": "Colourful water slides",
+    "category": "Swimming",
+    "alt": "Guests sitting at the top of a row of colourful pool slides",
+    "position": "50% 45%"
+  },
+  "poolPlayground": {
+    "src": "/images/swimming/pool_playground_professionally_aligned_16x9.webp",
+    "title": "Pool playground",
+    "category": "Swimming",
+    "alt": "Colourful slide and water play structure beside the resort building",
+    "position": "50% 50%"
+  },
+  "stay": {
+    "src": "/images/accommodations/hillside_cabins_professionally_aligned_16x9.webp",
+    "title": "Hillside cabins",
+    "category": "Accommodations",
+    "alt": "Wooden cabins with balconies and red roofs built along a green hillside",
+    "position": "50% 50%"
+  },
+  "privateCabin": {
+    "src": "/images/accommodations/private_cabin_professionally_aligned_full.webp",
+    "title": "Private cabin exterior",
+    "category": "Accommodations",
+    "alt": "Tall view of a wooden cabin and balcony set above a rocky, wooded slope",
+    "position": "50% 50%",
+    "fit": "contain"
+  },
+  "bedroom": {
+    "src": "/images/accommodations/deluxe_room_professionally_aligned_16x9.webp",
+    "title": "Bedroom interior",
+    "category": "Accommodations",
+    "alt": "Bedroom with a blue bed covering, wooden floor, and colourful wall mural",
+    "position": "55% 60%"
+  },
+  "bunkRoom": {
+    "src": "/images/accommodations/bunk_room_professionally_aligned_full.webp",
+    "title": "Bunk-bed room",
+    "category": "Accommodations",
+    "alt": "Wooden bunk beds and white bedding inside a shared sleeping room",
+    "position": "50% 50%",
+    "fit": "contain"
+  },
+  "glamping": {
+    "src": "/images/accommodations/glamping_tents_professionally_aligned_16x9.webp",
+    "title": "Glamping tents",
+    "category": "Camping & Glamping",
+    "alt": "Canvas bell tents on raised green platforms beside trees",
+    "position": "50% 50%"
+  },
+  "nightCamping": {
+    "src": "/images/accommodations/night_camping_professionally_aligned_full.webp",
+    "title": "Camping after dark",
+    "category": "Camping & Glamping",
+    "alt": "Illuminated camping shelter and outdoor chairs at night",
+    "position": "50% 50%",
+    "fit": "contain"
+  },
+  "atvDust": {
+    "src": "/images/gallery/ATV Adventure on a Dusty Trail.png",
+    "title": "A dusty trail ride",
+    "category": "Adventures",
+    "alt": "Helmeted ATV riders approaching along a dusty trail",
+    "position": "50% 50%"
+  },
+  "giantSwing": {
+    "src": "/images/gallery/giant_swing_professionally_aligned_16x9.webp",
+    "title": "Giant swing in motion",
+    "category": "Adventures",
+    "alt": "A guest in a red outfit swinging above the trees",
+    "position": "50% 45%"
+  },
+  "atvGroup": {
+    "src": "/images/gallery/paraiso_atv_group_website_16x9.webp",
+    "title": "ATV group outing",
+    "category": "Adventures",
+    "alt": "A group of guests posing beside their ATVs along the trail",
+    "position": "50% 50%"
+  },
+  "atvRiders": {
+    "src": "/images/gallery/paraiso_atv_riders_website_16x9.webp",
+    "title": "Two riders, one adventure",
+    "category": "Adventures",
+    "alt": "Two helmeted guests sitting on ATVs in an open field",
+    "position": "50% 50%"
+  },
+  "atvRiversideGroup": {
+    "src": "/images/gallery/paraiso_atv_riverside_group_website_16x9.webp",
+    "title": "Together by the river",
+    "category": "Adventures",
+    "alt": "A group of ATV riders parked together beside the river",
+    "position": "50% 50%"
+  },
+  "atvRiversideTrail": {
+    "src": "/images/gallery/paraiso_atv_riverside_trail_website_16x9.webp",
+    "title": "Riverside trail",
+    "category": "Adventures",
+    "alt": "ATV riders following the trail beside the river in warm afternoon light",
+    "position": "50% 50%"
+  },
+  "atvTrail": {
+    "src": "/images/gallery/paraiso_atv_trail_website_16x9.webp",
+    "title": "Around the ATV circuit",
+    "category": "Adventures",
+    "alt": "ATV riders following a marked dirt circuit with colourful flags",
+    "position": "50% 50%"
+  },
+  "hangingBridge": {
+    "src": "/images/gallery/paraiso_hanging_bridge_website_16x9.webp",
+    "title": "Crossing the hanging bridge",
+    "category": "Adventures",
+    "alt": "Guests crossing a rainbow-coloured hanging bridge above the green valley",
+    "position": "50% 50%"
+  },
+  "ziplinePlatform": {
+    "src": "/images/gallery/paraiso_zipline_website_16x9.webp",
+    "title": "Zipline departure",
+    "category": "Adventures",
+    "alt": "A guest leaving the zipline platform above the resort grounds",
+    "position": "50% 50%"
+  }
+}

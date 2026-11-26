@@ -1,0 +1,144 @@
+/* Scoped to the homepage noticeboard; shared category pages stay unchanged. */
+#promotions {
+  padding-block: 76px;
+  background: #efecdf;
+}
+#promotions .promotions-heading {
+  max-width: 760px;
+  margin-bottom: 36px;
+}
+#promotions .promotions-heading h2 {
+  font-size: clamp(38px, 4.2vw, 62px);
+  line-height: 1.08;
+}
+#promotions .promotions-heading > p:last-child {
+  max-width: 470px;
+  margin-top: 20px;
+  color: var(--muted);
+}
+#promotions .promotion-card {
+  border-color: #274b351a;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px #18342505;
+}
+#promotions .promotion-card:hover {
+  box-shadow: 0 10px 26px #1834250d;
+}
+#promotions .promotion-poster {
+  background: #e5e3d6;
+}
+#promotions .promotion-poster img {
+  transform: scale(0.97);
+  transition: transform 350ms ease;
+}
+#promotions .promotion-poster:hover img,
+#promotions .promotion-poster:focus-visible img {
+  transform: scale(1);
+}
+#promotions .promotion-copy {
+  padding: 26px;
+}
+#promotions .promotion-copy h3 {
+  font-size: clamp(23px, 2.2vw, 30px);
+  line-height: 1.18;
+}
+#promotions .promotion-expired {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+#promotions .promotion-action {
+  gap: 9px;
+  transition:
+    color 220ms ease,
+    gap 220ms ease;
+}
+#promotions .promotion-action:hover {
+  gap: 15px;
+}
+#promotions .promotions-empty {
+  padding: 28px;
+  border: 1px solid #274b3526;
+  border-radius: 6px;
+  background: #faf8f0;
+}
+#promotions .promotions-empty h3 {
+  font-size: 27px;
+  color: var(--forest);
+}
+#promotions .promotions-empty a {
+  color: var(--forest);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+#promotions .past-promotions {
+  margin-top: 32px;
+  padding-top: 6px;
+  border-top: 1px solid #274b3526;
+}
+#promotions .past-promotions > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+  cursor: pointer;
+  list-style: none;
+  color: var(--forest);
+  font-family: var(--serif);
+  font-size: 25px;
+}
+#promotions .past-promotions > summary::-webkit-details-marker {
+  display: none;
+}
+#promotions .past-promotions small {
+  display: inline-block;
+  margin-left: 16px;
+  color: var(--muted);
+  font: 11px var(--sans);
+  letter-spacing: 0.05em;
+}
+#promotions .past-promotions > summary svg {
+  flex-shrink: 0;
+  transition: transform 220ms ease;
+}
+#promotions .past-promotions[open] > summary svg {
+  transform: rotate(180deg);
+}
+#promotions .past-promotions-note {
+  max-width: 640px;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 24px;
+}
+@media (max-width: 700px) {
+  #promotions {
+    padding-block: 52px;
+  }
+  #promotions .promotions-heading {
+    margin-bottom: 28px;
+  }
+  #promotions .promotions-empty {
+    padding: 22px;
+    align-items: flex-start;
+  }
+  #promotions .promotions-empty h3 {
+    font-size: 24px;
+  }
+  #promotions .promotion-copy {
+    padding: 22px;
+  }
+  #promotions .past-promotions small {
+    display: block;
+    margin: 4px 0 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #promotions .promotion-poster img,
+  #promotions .promotion-action,
+  #promotions .past-promotions > summary svg {
+    transition: none;
+  }
+}

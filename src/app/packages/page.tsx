@@ -2,8 +2,11 @@ import { pageMetadata } from "@/lib/metadata";
 import { PageIntro } from "@/components/shared/page-intro";
 import { Media } from "@/components/media";
 import { VisitNote } from "@/components/shared/visit-note";
-import { BookingCTA } from "@/components/shared/BookingCTA";
+import { BookingCTA } from "@/components/shared/booking-cta";
 import { packages, groupInquiryTopics } from "@/data/packages";
+import Link from "next/link";
+import { getInquiryPath } from "@/config/booking";
+import { resortMedia } from "@/config/media";
 export const metadata = pageMetadata(
   "Groups & offers",
   "Ask the resort about group visits and approved packages for your preferred dates.",
@@ -26,8 +29,9 @@ export default function Packages() {
       />
       <section className="container info-split">
         <Media
+          asset="facilities"
           label="Better days, together"
-          alt="Approved photograph of resort gathering areas pending"
+          alt={resortMedia.facilities.alt}
         />
         <div>
           <p className="eyebrow">SOMETHING TO PLAN TOGETHER</p>
@@ -43,13 +47,15 @@ export default function Packages() {
           <ul className="package-list">
             {groupInquiryTopics.map((topic, i) => (
               <li key={topic}>
-                {topic}
+                <Link href={getInquiryPath("group", topic)}>{topic}</Link>
                 <span>0{i + 1} / INQUIRE</span>
               </li>
             ))}
           </ul>
           <div style={{ marginTop: 28 }}>
-            <BookingCTA intent="group">Discuss a group visit</BookingCTA>
+            <BookingCTA intent="group" subject="Group visit">
+              Discuss a group visit
+            </BookingCTA>
           </div>
         </div>
       </section>
@@ -65,13 +71,15 @@ export default function Packages() {
                 ))}
               </ul>
               {item.priceLabel && <p>{item.priceLabel}</p>}
-              <BookingCTA intent="group">Inquire about this package</BookingCTA>
+              <BookingCTA intent="group" subject={item.name}>
+                Inquire about this package
+              </BookingCTA>
             </article>
           ))
         ) : (
           <div className="editorial-empty">
             <p className="eyebrow">CURRENT OFFERS</p>
-            <h3>No confirmed packages published yet.</h3>
+            <h3>Make a plan for your people.</h3>
             <p>
               Ask the resort about any offers for your dates. Prices,
               inclusions, validity, and terms must be confirmed directly.

@@ -1,8 +1,10 @@
 import { pageMetadata } from "@/lib/metadata";
+import { PublicServices } from "@/components/booking/public-services";
 import { PageIntro } from "@/components/shared/page-intro";
 import { Media } from "@/components/media";
 import { VisitNote } from "@/components/shared/visit-note";
-import { BookingCTA } from "@/components/shared/BookingCTA";
+import { BookingCTA } from "@/components/shared/booking-cta";
+import { PhotoCollection } from "@/components/photo-collection";
 export const metadata = pageMetadata(
   "Dining at Paraiso",
   "Ask about current restaurant service and dining arrangements for your visit to Paraiso.",
@@ -22,21 +24,25 @@ export default function Dining() {
         }
         description="Leave a little time to gather around the table. Find out about dining options during your visit."
       >
-        <BookingCTA intent="dining" variant="outline">
+        <BookingCTA
+          intent="dining"
+          subject="Dining arrangements"
+          variant="outline"
+        >
           Ask about dining
         </BookingCTA>
       </PageIntro>
       <section className="container dining-feature">
         <Media
+          asset="dining"
           className="media-clay"
           label="A seat at the table"
-          alt="Approved restaurant and dining photograph pending"
+          alt="Dining pavilion at Paraiso"
         />
         <div className="dining-caption">
           <span>COME TOGETHER / STAY A LITTLE LONGER</span>
           <p>
-            Restaurant photographs and verified menu information will be added
-            with the resort’s approval.
+            Take a moment between adventures. Make time for a meal together.
           </p>
         </div>
       </section>
@@ -56,23 +62,32 @@ export default function Dining() {
             party.
           </p>
           <div className="editorial-empty">
-            <h3>A fresh look at the menu, soon.</h3>
+            <h3>Something for your gathering.</h3>
             <p>
-              We haven’t published dishes or prices without confirmation.
               Request the current menu directly from the resort, and ask about
               dietary requirements before your visit.
             </p>
-            <BookingCTA intent="dining" variant="link">
+            <BookingCTA
+              intent="dining"
+              subject="Dining arrangements"
+              variant="link"
+            >
               Request dining information
             </BookingCTA>
           </div>
         </div>
       </section>
+      <PhotoCollection
+        title="Places to gather"
+        description="A look inside the dining hall and at the garden cabanas. Ask about arrangements for your group."
+        ids={["diningHall", "pavilion"]}
+      />
       <VisitNote title="Planning to bring the whole group?">
         Mention your group size, preferred visit date, and any dietary or
         accessibility needs when you inquire. Confirm all dining arrangements
         directly.
       </VisitNote>
+      <section className="container"><h2>Reserve your dining experience.</h2><PublicServices category="DINING" /></section>
     </>
   );
 }

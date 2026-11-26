@@ -1,7 +1,9 @@
 node_modules/
 .next/
+.next-demo/
 .env*
 !.env.example
+!.env.demo.example
 coverage/
 *.tsbuildinfo
 test-results/

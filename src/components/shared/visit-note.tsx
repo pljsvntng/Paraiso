@@ -1,4 +1,4 @@
-import { BookingCTA } from "./BookingCTA";
+import { BookingCTA } from "./booking-cta";
 export function VisitNote({
   title = "A little planning goes a long way.",
   children,

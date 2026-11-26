@@ -1,0 +1,58 @@
+{
+  "familyDeluxeExterior": {
+    "src": "/images/accommodations/fmly_deluxe.jpg",
+    "title": "Family Deluxe exterior",
+    "category": "Accommodations",
+    "alt": "Timber Family Deluxe building with balconies and warm exterior lights at night",
+    "position": "50% 50%"
+  },
+  "familyDeluxeInterior": {
+    "src": "/images/accommodations/family_deluxe.jpg",
+    "title": "Family Deluxe bedroom",
+    "category": "Accommodations",
+    "alt": "Family Deluxe bedroom with white bedding, wooden flooring, curtains and a bedside lamp",
+    "position": "50% 52%"
+  },
+  "iglooExterior": {
+    "src": "/images/accommodations/Igloo-pax.png",
+    "title": "Igloo exterior",
+    "category": "Accommodations",
+    "alt": "Curved Igloo entrance with exposed brick, a glazed doorway and surrounding plants",
+    "position": "50% 50%"
+  },
+  "iglooInterior": {
+    "src": "/images/accommodations/Igloo-2pax.png",
+    "title": "Igloo interior",
+    "category": "Accommodations",
+    "alt": "Igloo sleeping space with grey bedding and a colourful forest and sky mural across the curved walls",
+    "position": "50% 50%"
+  },
+  "woodenBrickExterior": {
+    "src": "/images/accommodations/wooden_brck.png",
+    "title": "Wooden and Brick exterior",
+    "category": "Accommodations",
+    "alt": "Wooden and Brick exterior with horizontal timber cladding, red brickwork and a large window",
+    "position": "50% 50%"
+  },
+  "woodenBrickInterior": {
+    "src": "/images/accommodations/wooden_brick.png",
+    "title": "Wooden and Brick bedroom",
+    "category": "Accommodations",
+    "alt": "Timber bunk-bed arrangement with white bedding and warm wood details in the Wooden and Brick room",
+    "position": "50% 50%"
+  },
+  "standardCabinInterior": {
+    "src": "/images/accommodations/stndrd_cabin.png",
+    "title": "Standard Cabin bedroom",
+    "category": "Accommodations",
+    "alt": "Standard Cabin bedroom with white bedding, a wooden bed frame and a vivid bird and forest mural",
+    "position": "50% 50%"
+  },
+  "bunkhouseInterior": {
+    "src": "/images/accommodations/bunkhouse.webp",
+    "title": "Bunkhouse interior",
+    "category": "Accommodations",
+    "alt": "Multiple wooden bunk beds with white bedding inside the Bunkhouse",
+    "position": "50% 50%"
+  }
+}

@@ -19,7 +19,7 @@ export default function Gallery() {
             Lovely <em>memories.</em>
           </>
         }
-        description="A closer look at the place, the experiences, and the little details. Our approved resort photo collection is coming together."
+        description="A closer look at the place, the experiences, and the little details. Explore the resort photographs by category and open any image for the full view."
       />
       <ResortGallery />
       <VisitNote title="Want a closer look before you come?">

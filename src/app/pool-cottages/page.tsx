@@ -2,7 +2,9 @@ import { pageMetadata } from "@/lib/metadata";
 import { PageIntro } from "@/components/shared/page-intro";
 import { Media } from "@/components/media";
 import { VisitNote } from "@/components/shared/visit-note";
-import { BookingCTA } from "@/components/shared/BookingCTA";
+import { BookingCTA } from "@/components/shared/booking-cta";
+import { PhotoCollection } from "@/components/photo-collection";
+import { PublicServices } from "@/components/booking/public-services";
 export const metadata = pageMetadata(
   "Swimming & cottages",
   "Plan a pool day or inquire about cottage arrangements at Paraiso de June Quixote Ecofarm Resort.",
@@ -43,8 +45,9 @@ export default function Swimming() {
             </BookingCTA>
           </div>
           <Media
+            asset="pool"
             label="The refreshing side of Paraiso"
-            alt="Approved swimming pool photograph pending"
+            alt="Main swimming pool at Paraiso"
             className="media-lagoon"
           />
         </div>
@@ -87,10 +90,14 @@ export default function Swimming() {
             </li>
           </ul>
           <p className="small-copy">
-            This website does not show live cottage or pool availability.
+            Check live availability for enabled swimming services on our booking page. Cottage inventory is available only after the resort verifies and configures it.
           </p>
         </div>
       </section>
+      <section className="container"><h2>Plan your swimming visit.</h2><PublicServices category="SWIMMING" /></section>
+      <PhotoCollection title="A little more pool time"
+        description="Explore the pool photographs, from the garden pool to the water play areas. Confirm current access and guest guidelines before visiting."
+        ids={["bluePool", "miniPool", "naturePool", "kidsPool", "waterPlay", "waterSlides", "poolPlayground"]} />
       <VisitNote title="Bring the questions. We’ll help with the plan." />
     </>
   );

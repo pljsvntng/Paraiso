@@ -1,10 +1,14 @@
 import { pageMetadata } from "@/lib/metadata";
 import { PageIntro } from "@/components/shared/page-intro";
-import { BookingCTA } from "@/components/shared/BookingCTA";
+import { ArrowUpRight } from "lucide-react";
 import { site } from "@/config/site";
+import { ResortLocation } from "@/components/shared/resort-location";
+import { Suspense } from "react";
+import { InquiryForm } from "@/components/shared/inquiry-form";
+import { getBookingLink } from "@/config/booking";
 export const metadata = pageMetadata(
   "Contact & location",
-  "Contact Paraiso through the official Facebook page and request the verified address and directions before travelling.",
+  "Find Paraiso de June Quixote Ecofarm Resort in Mabacao, Tulay B, Maragondon, Cavite. Explore the map, get directions, or contact the resort.",
   "/contact/",
 );
 export default function Contact() {
@@ -37,10 +41,18 @@ export default function Contact() {
             Share your preferred date, group size, and interests. Ask the team
             for the full price and confirmation before making plans.
           </p>
-          <BookingCTA variant="light">Open official Facebook</BookingCTA>
+          <a
+            className="button button-light"
+            href={site.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open official Facebook (opens in a new tab)"
+          >
+            Open official Facebook <ArrowUpRight size={17} aria-hidden="true" />
+          </a>
           <p className="small-copy" style={{ marginTop: 20 }}>
-            Opens in a new tab. No inquiry form or reservation is submitted on
-            this website.
+            Opens in a new tab. For a prepared message, use the inquiry draft
+            below.
           </p>
         </section>
         <section className="contact-details">
@@ -60,7 +72,7 @@ export default function Contact() {
               <span>
                 {site.locationVerified && site.address
                   ? site.address
-                  : "Please request the verified address and map pin."}
+                  : "Tulay Silangan, Maragondon, Cavite & Malainen Luma, Naic, Cavite"}
               </span>
             </li>
             <li>
@@ -71,7 +83,7 @@ export default function Contact() {
                     {site.phone}
                   </a>
                 ) : (
-                  "Not yet verified. Please use official Facebook."
+                  "Ask through the official Facebook page"
                 )}
               </span>
             </li>
@@ -81,84 +93,90 @@ export default function Contact() {
                 {site.email ? (
                   <a href={`mailto:${site.email}`}>{site.email}</a>
                 ) : (
-                  "Not yet verified. Please use official Facebook."
+                  "Ask through the official Facebook page"
                 )}
               </span>
             </li>
             <li>
               <span>Operating hours</span>
-              <span>{site.hours || "Ask the resort for current hours."}</span>
+              <span>
+                {site.hours || "Confirm current hours with the resort"}
+              </span>
             </li>
           </ul>
         </section>
       </div>
-      <section className="container location-panel">
-        <div className="location-copy">
-          <p className="eyebrow">THE WAY TO PARAISO</p>
-          <h2>
-            A little planning.
-            <br />A better <em>arrival.</em>
+      <section
+        id="inquiry"
+        className="container inquiry-section"
+        aria-labelledby="inquiry-heading"
+      >
+        <div className="inquiry-introduction">
+          <p className="eyebrow">A LITTLE HELP GETTING STARTED</p>
+          <h2 id="inquiry-heading">
+            Make it <em>your kind of visit.</em>
           </h2>
           <p>
-            Public listings refer to Mabacao / Tulay B, Maragondon, Cavite. The
-            precise business address and map pin still require the resort’s
-            verification.
+            Prepare a message with your preferred stay, activity or group plans.
+            This opens your own email app; the website does not deliver messages
+            or confirm reservations.
           </p>
-          <p>
-            We’ll add directions and a map once the location is confirmed. Until
-            then, ask the team for their preferred route.
-          </p>
-          {site.locationVerified && site.directionsUrl ? (
-            <a
-              className="button button-primary"
-              href={site.directionsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get directions ↗
-            </a>
-          ) : (
-            <BookingCTA variant="outline">Ask for the map pin</BookingCTA>
+          {getBookingLink().isInquiry && (
+            <p className="small-copy">
+              You can request a reservation through our online booking page.
+              Staff personally review and confirm each request.
+            </p>
           )}
         </div>
-        {site.locationVerified && site.mapEmbedUrl ? (
-          <iframe
-            className="map-frame"
-            src={site.mapEmbedUrl}
-            title="Verified resort location"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        ) : (
-          <div className="map-pending">
-            <p>
-              Maragondon,
-              <br />
-              <em>Cavite.</em>
+        <Suspense
+          fallback={
+            <p className="small-copy">
+              The inquiry draft requires JavaScript. You can also use the email,
+              phone or official Facebook links above.
             </p>
-            <small>
-              MAP PLACEHOLDER
-              <br />
-              Exact resort pin awaiting verification.
-            </small>
-          </div>
-        )}
+          }
+        >
+          <InquiryForm />
+        </Suspense>
       </section>
+      <ResortLocation />
       <section id="privacy" className="container privacy-note">
         <p className="eyebrow">ABOUT THIS WEBSITE</p>
         <h2>Your visit, with a little clarity.</h2>
         <p>
-          This static website has no inquiry forms, user accounts, payment
-          collection, or booking processing. It does not ask for guest details
-          or use analytics or tracking tools. The hosting provider may retain
+          This website securely records reservation requests for staff review.
+          No online payment, card details, wallet account or payment screenshot
+          is required to submit a request. Staff accounts are private. Guest
+          reviews are written directly on Google Maps, where Google handles
+          sign-in, submission and storage. This website does not collect review
+          submissions or store inquiry drafts. Inquiry details remain in your
+          browser until you copy them or open your email app, where you control
+          sending. Selected reviews are manually republished with permission. It
+          does not use first-party analytics. The hosting provider may retain
           standard access logs under its own policy.
         </p>
         <p>
-          Links to Facebook and any future external reservation website open a
-          separate service governed by that service’s privacy practices. Share
-          only the information necessary for your inquiry, and ask the resort
-          how it will handle your details. This notice must be reviewed again if
-          forms, analytics, or other services are introduced.
+          The embedded map connects to Google, which may process device and
+          connection information under its{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            privacy policy<span className="sr-only"> (opens in a new tab)</span>
+          </a>
+          .
+        </p>
+        <p>
+          Links to Facebook open a separate service governed by that service’s
+          privacy practices. Share only the information necessary for your
+          inquiry, and ask the resort how it will handle your details.
+          Reservation contact details, dates and requests are stored in the
+          resort’s private database and shared only with authorized staff and
+          configured email and Microsoft Excel services for reservation
+          management. Historical financial records remain private and available
+          to authorized users. Contact the resort to request access, correction
+          or deletion where applicable.
         </p>
       </section>
     </>

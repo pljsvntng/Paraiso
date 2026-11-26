@@ -3,10 +3,13 @@ export type MediaCategory =
   | "Adventures"
   | "Swimming"
   | "Accommodations"
-  | "Dining";
+  | "Dining"
+  | "Camping & Glamping"
+  | "Resort Facilities";
 export interface ResortImage {
   id: string;
   src: string | null;
+  originalSrc?: string;
   alt: string;
   title: string;
   category: MediaCategory;
@@ -20,6 +23,8 @@ export interface Adventure {
   description: string;
   confirmed: boolean;
   image: string | null;
+  /** Optional details confirmed by the resort; omit unknown fees and restrictions. */
+  verified?: { requirements?: string[]; priceLabel?: string };
 }
 export interface Accommodation {
   slug: string;

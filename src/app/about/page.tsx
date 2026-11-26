@@ -22,8 +22,9 @@ export default function About() {
       />
       <div className="container full-media">
         <Media
+          asset="nature"
           label="The setting for your next escape"
-          alt="Approved resort landscape photograph pending"
+          alt="Aerial view of the pools and green resort grounds"
         />
       </div>
       <section className="container about-body">
@@ -46,9 +47,8 @@ export default function About() {
             how to turn your visit into an overnight stay.
           </p>
           <p>
-            We’re building this website around the real place. Official
-            photography, a fuller resort history, and confirmed facility
-            information will be added as the resort approves them.
+            Make the day your own. Let the team help with the practical details,
+            from your group’s interests to the arrangements for a longer escape.
           </p>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default function About() {
           <br />
           Others are for doing a little less.”
         </blockquote>
-        <p>THE SPIRIT OF YOUR PARAISO ESCAPE · EDITORIAL COPY</p>
+        <p>FIND YOUR OWN PACE AT PARAISO</p>
       </div>
       <VisitNote title="Start with your kind of escape." />
     </>

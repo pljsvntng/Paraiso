@@ -1,34 +1,69 @@
 {
-  "name": "paraiso-resort-static",
+  "name": "paraiso-resort",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
+    "prebuild": "npm run images:prepare",
     "build": "next build",
-    "preview": "node scripts/preview.mjs",
+    "postbuild": "node -e \"console.log('Server build ready. Use npm start.')\"",
+    "preview": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "node --test scripts/static-audit.test.mjs"
+    "images:prepare": "node scripts/assets/prepare-images.mjs",
+    "test": "node --import tsx --test --test-force-exit --test-concurrency=1 tests/*.test.ts",
+    "start": "next start",
+    "db:migrate": "tsx scripts/booking-admin.ts migrate",
+    "db:seed": "tsx scripts/booking-admin.ts seed",
+    "demo:provision": "tsx scripts/booking-demo.ts provision",
+    "demo:setup": "tsx scripts/booking-demo.ts setup",
+    "demo:reset": "tsx scripts/booking-demo.ts reset",
+    "demo:check": "tsx scripts/booking-demo.ts check",
+    "demo:dev": "tsx scripts/booking-demo.ts dev",
+    "demo:build": "tsx scripts/booking-demo.ts build",
+    "demo:start": "tsx scripts/booking-demo.ts start",
+    "demo:verify": "tsx scripts/demo/verify.ts",
+    "db:check": "tsx scripts/booking-admin.ts check",
+    "ops:readiness": "tsx scripts/booking-admin.ts readiness",
+    "admin:create": "tsx scripts/booking-admin.ts admin",
+    "admin:reset-password": "tsx scripts/booking-admin.ts admin-reset",
+    "jobs:run": "tsx scripts/booking-admin.ts jobs",
+    "privacy:preview": "tsx scripts/booking-admin.ts privacy-preview"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "exceljs": "^4.4.0",
+    "lucide-react": "^0.552.0",
     "next": "^16.4.6",
+    "nodemailer": "^10.6.1",
+    "pg": "^8.23.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "lucide-react": "^0.552.0",
-    "motion": "^12.23.0",
-    "clsx": "^2.1.1",
+    "sharp": "^0.35.5",
     "tailwind-merge": "^3.3.0",
-    "@radix-ui/react-slot": "^1.2.3",
-    "class-variance-authority": "^0.7.1"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "typescript": "^5.9.0",
+    "@tailwindcss/postcss": "^4.1.0",
     "@types/node": "^24.0.0",
+    "@types/nodemailer": "^8.0.2",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
-    "tailwindcss": "^4.1.0",
-    "@tailwindcss/postcss": "^4.1.0",
+    "embedded-postgres": "^18.7.0-beta.19",
     "eslint": "^9.39.0",
-    "eslint-config-next": "^16.4.6"
+    "eslint-config-next": "^16.4.6",
+    "playwright": "^1.65.1",
+    "prettier": "^3.10.1",
+    "tailwindcss": "^4.1.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.0"
+  },
+  "overrides": {
+    "exceljs": {
+      "uuid": "^11.1.1"
+    }
   }
 }

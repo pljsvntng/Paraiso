@@ -3,19 +3,19 @@ export const faqs = [
     category: "Planning",
     question: "How do I plan a visit?",
     answer:
-      "Message the resort through the official Facebook page. Share your preferred visit date, group size, and what you would like to do. The team can advise on current arrangements.",
+      "Use the online booking page to choose a configured accommodation or package, dates and guests. Submit a request and save your reference. The resort team reviews every pending request before confirming. You can also contact the team for options not yet available online.",
   },
   {
     category: "Planning",
     question: "Where is the resort located?",
     answer:
-      "Public listings place Paraiso de June Quixote Ecofarm Resort in Maragondon, Cavite. Please ask the resort for its exact address and verified map pin before travelling.",
+      "The resort is in Mabacao, Tulay B, Maragondon, Cavite. Find the published Google Maps location and directions on our Contact page.",
   },
   {
     category: "Planning",
     question: "What are the current rates and opening hours?",
     answer:
-      "Current entrance fees, room rates, operating hours, and attraction schedules have not been verified for this website. Please contact the resort for the latest information.",
+      "The booking page shows current configured rates and sessions for enabled services. Published visitor hours are Tuesday to Sunday, 8:00 am to 6:00 pm; confirm any seasonal changes with the resort.",
   },
   {
     category: "Experiences",
@@ -39,7 +39,7 @@ export const faqs = [
     category: "Reservations",
     question: "Can I book or pay on this website?",
     answer:
-      "This is an informational website. Reservation links currently open the resort’s official Facebook page for inquiries. No bookings, availability checks, deposits, or payments are processed here.",
+      "This website accepts reservation requests for configured resort services. Choose your services, dates and guest details, then submit without online payment. Staff review each request and recheck availability before approval. Pending requests do not reserve capacity. You can follow the decision and staff response in your secure reservation tracker.",
   },
   {
     category: "Reservations",
